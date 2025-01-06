@@ -88,10 +88,26 @@ class EmojiExtractor(discord.Client):
         await self.close()
 
 
+def dot_env_exists() -> bool:
+    """
+    Checks if the .env file exists in the current directory.
+
+    :return: True if the .env file exists, False otherwise.
+    """
+    env_path = Path(".env")
+    if not env_path.exists():
+        env_path.write_text('''DISCORD_TOKEN = ""  \nSERVER_ID = ''')
+        return False
+    return True
+
+
 def main() -> None:
     """
     Initializes the EmojiExtractor bot and starts the client.
     """
+    if not dot_env_exists():
+        raise SystemExit("Please fill in the .env file with your Discord token and server ID.")
+
     intents = discord.Intents.default()
     intents.guilds = True
 

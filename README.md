@@ -1,4 +1,3 @@
-# Author: https://github.com/Defmon3
 # Emoji Extractor
 
 This project extracts all emojis from a Discord server and downloads them to a local folder. The extracted emoji information is also saved in a JSON file.
@@ -10,7 +9,7 @@ This project extracts all emojis from a Discord server and downloads them to a l
 - Logs actions using `loguru` for better debugging.
 
 ## Requirements
-- Python 3.8 or higher
+- Python 3.12 or higher
 - A Discord bot token with appropriate permissions
 - `loguru`, `httpx`, `discord.py`, and `python-dotenv` installed
 
